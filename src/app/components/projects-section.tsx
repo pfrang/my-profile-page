@@ -5,7 +5,7 @@ import { TextDescriptions } from "./text-descriptions";
 import { p, h1 } from "../fonts/fonts.ts";
 import { TiArrowLoop, TiArrowMaximise } from "react-icons/ti";
 
-const borderStyles = "h-full p-2 border-2 ";
+const borderStyles = "border-2";
 
 const Card = ({
   url,
@@ -26,40 +26,50 @@ const Card = ({
     setIsFlipped(!isFlipped);
   };
 
-  const TopSection = () => {
+  const Section = ({ children }: { children: React.ReactNode }) => {
     return (
-      <div className="flex justify-between p-1 mb-2">
-        <TiArrowLoop
-          className="cursor-pointer"
-          onClick={handleClick}
-          size={20}
-        />
-        {isFlipped && (
-          <TiArrowMaximise
+      <div className={`border-2 h-full flex flex-col p-2 flex-grow`}>
+        <div className="flex justify-between p-1 mb-2">
+          <TiArrowLoop
             className="cursor-pointer"
+            onClick={handleClick}
             size={20}
-            onClick={onMaximize}
           />
-        )}
+          {isFlipped && (
+            <TiArrowMaximise
+              className="cursor-pointer"
+              size={20}
+              onClick={onMaximize}
+            />
+          )}
+        </div>
+        {children}
       </div>
     );
   };
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      <div className={`${borderStyles} flex flex-col`}>
-        <TopSection />
+    <ReactCardFlip
+      containerStyle={{ height: "100%" }}
+      isFlipped={isFlipped}
+      flipDirection="horizontal"
+    >
+      <Section>
         <p className={`${h1.className} text-center pb-4`}>{title}</p>
         <p className={p.className + "text-2xl"}>{text}</p>
-      </div>
-      <div className={`${borderStyles} flex flex-col`} onClick={handleClick}>
-        <TopSection />
+      </Section>
+      <Section>
         <iframe
-          style={{ width: "100%", height: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+            boxSizing: "border-box",
+          }}
           src={url}
           title="Fådetpå"
         ></iframe>
-      </div>
+      </Section>
     </ReactCardFlip>
   );
 };
@@ -86,16 +96,20 @@ export const CardContainer = () => {
   ];
 
   return (
-    <div className="card-container grid grid-cols-3 gap-4 h-full">
+    <div className="card-container grid md:grid-cols-3 grid-cols-1 gap-4 h-full overflow-hidden">
       {cards.map((card) => (
-        <Card
+        <div
           key={card.text}
-          url={card.url}
-          text={card.text}
-          title={card.title}
-          isMaximized={card.url === maximizedCard}
-          onMaximize={() => setMaximizedCard(card.url)}
-        />
+          className="h-[200px] h-full flex flex-col overflow-auto"
+        >
+          <Card
+            url={card.url}
+            text={card.text}
+            title={card.title}
+            isMaximized={card.url === maximizedCard}
+            onMaximize={() => setMaximizedCard(card.url)}
+          />
+        </div>
       ))}
     </div>
   );
