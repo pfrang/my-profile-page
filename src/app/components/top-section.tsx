@@ -1,16 +1,17 @@
-import { h1, p } from "../fonts/fonts.ts";
+import { styles, stylex } from "../styles";
+
 
 export const TopSection = () => {
   return (
     <section className="pt-8 text-center">
-      <h1 className={`${h1.className} text-[#0c3b66] text-2xl`}>
+      <h1 {...stylex.props(styles.h1)} >
         Welcome to my profile page
       </h1>
 
       <span className="pt-6 block" />
-      <div className={p.className}>
-        <p className="text-xl">Have a look at my projects below</p>
+      <div >
+        <p {...stylex.props(styles.p)} className="text-xl">Have a look at my projects below</p>
       </div>
-    </section>
+    </section >
   );
 };

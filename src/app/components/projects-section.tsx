@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { TextDescriptions } from "./text-descriptions";
-import { p, h1 } from "../fonts/fonts.ts";
 import { TiArrowLoop, TiArrowMaximise } from "react-icons/ti";
+import { styles, stylex } from "../styles";
 
 const borderStyles = "border-2";
 
@@ -55,8 +55,8 @@ const Card = ({
       flipDirection="horizontal"
     >
       <Section>
-        <p className={`${h1.className} text-center pb-4`}>{title}</p>
-        <p className={p.className + "text-2xl"}>{text}</p>
+        <p {...stylex.props(styles.h1)} className={`text-center pb-4`}>{title}</p>
+        <p {...stylex.props(styles.p)} className={"text-2xl"}>{text}</p>
       </Section>
       <Section>
         <iframe
@@ -70,7 +70,7 @@ const Card = ({
           title="Fådetpå"
         ></iframe>
       </Section>
-    </ReactCardFlip>
+    </ReactCardFlip >
   );
 };
 

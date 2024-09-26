@@ -1,7 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
-
-import { p } from "../fonts/fonts.ts";
+import { styles, stylex } from "../styles";
 
 const socialMedia = {
   Github: {
@@ -26,7 +25,7 @@ export const BottomSection = () => {
               href={socialMedia[some as SocialMedia].url}
               target="_blank"
             >
-              <p className={`${p.className} text-xl`}>{some}</p>
+              <p {...stylex.props(styles.p)} className={`text-xl`}>{some}</p>
               {socialMedia[some as SocialMedia].icon}
             </a>
           </div>
