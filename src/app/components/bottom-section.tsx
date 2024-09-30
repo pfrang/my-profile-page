@@ -16,7 +16,7 @@ type SocialMedia = keyof typeof socialMedia;
 
 export const BottomSection = () => {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 static bottom-14 justify-center w-full">
       {Object.keys(socialMedia).map((some) => {
         return (
           <div className="flex justify-center">

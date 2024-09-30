@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body {...stylex.props(styles.gradientBackground)}>{children}</body>
+    <html lang="en" >
+      <body>{children}</body>
     </html>
   );
 }

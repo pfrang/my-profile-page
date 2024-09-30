@@ -3,7 +3,7 @@ import { styles, stylex } from "../styles";
 
 export const TopSection = () => {
   return (
-    <section className="pt-8 text-center">
+    <div className="pt-8 text-center">
       <h1 {...stylex.props(styles.h1)} >
         Welcome to my profile page
       </h1>
@@ -12,6 +12,6 @@ export const TopSection = () => {
       <div >
         <p {...stylex.props(styles.p)} className="text-xl">Have a look at my projects below</p>
       </div>
-    </section >
+    </div >
   );
 };
