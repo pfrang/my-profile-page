@@ -17,9 +17,9 @@ type SocialMedia = keyof typeof socialMedia;
 export const BottomSection = () => {
   return (
     <div className="flex items-center justify-center gap-4 static bottom-14 justify-center w-full">
-      {Object.keys(socialMedia).map((some) => {
+      {Object.keys(socialMedia).map((some, index) => {
         return (
-          <div className="flex justify-center">
+          <div key={index} className="flex justify-center">
             <a
               className="flex flex-col items-center hover:text-blue-500"
               href={socialMedia[some as SocialMedia].url}

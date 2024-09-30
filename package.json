@@ -27,7 +27,9 @@
   "devDependencies": {
     "@stylexjs/babel-plugin": "^0.7.5",
     "@stylexjs/dev-runtime": "^0.7.5",
+    "@stylexjs/eslint-plugin": "^0.7.5",
     "@stylexjs/nextjs-plugin": "^0.7.5",
+    "@types/jest": "^29.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
