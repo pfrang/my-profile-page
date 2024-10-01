@@ -45,7 +45,6 @@ export const CircleAnimation = ({ count }) => {
                             height: `${size}px`,
                            animationName: position.keyframes,
                             animationDuration: getRandomDuration(2, 5), // Random duration for fast movement
-                            animationDelay: getRandomDelay(1), // Random delay for animation start
                         }}
                     />
                 );
