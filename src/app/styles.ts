@@ -1,5 +1,26 @@
 import stylex from "@stylexjs/stylex";
 
+
+const flyKeyframesTop = stylex.keyframes({
+    '0%': { transform: 'translate(0, 0) rotate(130deg)' },
+    '100%': { transform: 'translate(100vw, 100vh) rotate(130deg)' },
+});
+
+const flyKeyframesRight = stylex.keyframes({
+    '0%': { transform: 'translate(0, 0) rotate(220deg)' },
+    '100%': { transform: 'translate(-100vw, 100vh) rotate(220deg)' },
+});
+
+const flyKeyframesBottom = stylex.keyframes({
+    '0%': { transform: 'translate(0, 0) rotate(300deg)' },
+    '100%': { transform: 'translate(-100vw, -100vh) rotate(300deg)' },
+});
+
+const flyKeyframesLeft = stylex.keyframes({
+    '0%': { transform: 'translate(0, 0) rotate(60deg)' },
+    '100%': { transform: 'translate(100vw, -100vh) rotate(60deg)' },
+});
+
 const styles = stylex.create({
 	gradientBackground: {
 		background: 'linear-gradient(0deg, purple 0%, darkgoldenrod 40%)',
@@ -32,13 +53,10 @@ const styles = stylex.create({
         animationTimingFunction: "linear",
         animationIterationCount: "infinite",
         animationName: stylex.keyframes({
-            "0%": { transform: "translate(0, 0) rotate(0deg)" },
-            "25%": { transform: "translate(50vw, 20vh) rotate(90deg)" },
-            "50%": { transform: "translate(-30vw, -30vh) rotate(180deg)" },
-            "75%": { transform: "translate(40vw, 50vh) rotate(270deg)" },
-            "100%": { transform: "translate(0, 0) rotate(360deg)" },
+            '0%': { transform: 'translate(0, 0)' },
+            '100%': { transform: 'translate(100vw, 100vh)' },
         }),
     },
 });
 
-export { stylex, styles }
+export { stylex, styles, flyKeyframesTop, flyKeyframesRight, flyKeyframesBottom, flyKeyframesLeft }
