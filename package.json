@@ -17,8 +17,6 @@
     "@stylexjs/stylex": "^0.7.5",
     "dotenv": "^16.4.5",
     "next": "14.2.3",
-    "prebuild": "rimraf .next",
-    "predev": "rimraf.next",
     "react": "^18",
     "react-card-flip": "^1.2.3",
     "react-dom": "^18",
