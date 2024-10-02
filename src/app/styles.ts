@@ -30,12 +30,6 @@ const styles = stylex.create({
 	white: {
         color: 'white',
 	},
-	h1: {
-		fontFamily: '"Dyna Puff", sans-serif',
-		fontSize: '3rem',
-		fontWeight: 400,
-		color: 'white',
-	},
 	p: {
 		fontFamily: '"Zilla Slab", serif',
 		fontSize: '1.25rem',

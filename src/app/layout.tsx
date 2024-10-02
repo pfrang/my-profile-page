@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { stylex, styles } from "./styles";
 import "./globals.css";
 
 

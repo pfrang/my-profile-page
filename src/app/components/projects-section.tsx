@@ -55,7 +55,7 @@ const Card = ({
       flipDirection="horizontal"
     >
       <Section>
-        <p {...stylex.props(styles.h1)} className={`text-center pb-4`}>{title}</p>
+        <p className={`text-center pb-4`}>{title}</p>
         <p {...stylex.props(styles.p)} className={"text-2xl"}>{text}</p>
       </Section>
       <Section>

@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'star-jedi': ['Star Jedi', 'sans-serif'],
+        'star-jedi-hollow': ['Star Jedi Hollow', 'sans-serif'],
+        'star-jedi-rounded': ['Star Jedi Rounded', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
